@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, {useState, useEffect} from 'react'
 import TodoList from './Todo/TodoList'
 import Context from './context'
 import Loader from './Loader'
@@ -57,16 +57,16 @@ function App() {
   }
 
   return (
-    <Context.Provider value={{ removeTodo }}>
+    <Context.Provider value={{removeTodo}}>
       <div className='wrapper'>
         <h1>Todo List</h1>
-        <Modal />
-        <React.Suspense fallback={<Loader />}>
-          <AddTodo onCreate={addTodo} />
+        <Modal/>
+        <React.Suspense fallback={<Loader/>}>
+          <AddTodo onCreate={addTodo}/>
         </React.Suspense>
-        {loading && <Loader />}
+        {loading && <Loader/>}
         {todos.length > 0 ? (
-          <TodoList todos={todos} onToggle={toggleTodo} />
+          <TodoList todos={todos} onToggle={toggleTodo}/>
         ) : loading ? null : (
           <p>No todos!</p>
         )}
